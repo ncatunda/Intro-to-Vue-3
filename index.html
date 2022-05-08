@@ -21,6 +21,11 @@
             <h1>{{ product }}</h1>
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
+			<ul>
+				<li v-for="i in details">{{ i }}</li>
+			</ul>
+			<div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+			<!-- the :key gives each DOM elements a unique key so vue can keep track of the element as it updates and changes in the app. that provides with some performance and it helps when doing animations -->
           </div>
         </div>
       </div>
@@ -35,3 +40,4 @@
     </script>
   </body>
 </html>
+	
